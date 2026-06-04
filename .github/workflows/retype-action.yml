@@ -1,0 +1,20 @@
+name: Publish Retype Documentation
+on:
+  push:
+    branches:
+      - main # Change this if your default branch is 'master'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Build and Deploy Website
+        uses: retypeapp/action-github-pages@v3
